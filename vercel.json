@@ -6,11 +6,16 @@
   },
   "routes": [
     {
-      "src": "/fonts/.*\\.woff2",
+      "src": "/fonts/(.*)\\.woff2",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
-      },
-      "continue": true
+      }
+    },
+    {
+      "src": "/api/cron",
+      "headers": {
+        "Cache-Control": "no-store, max-age=0"
+      }
     },
     {
       "src": "/(.*)",
@@ -21,8 +26,7 @@
   "crons": [
     {
       "path": "/api/cron",
-      "schedule": "0 1 * * *",
-      "timeout": 8
+      "schedule": "0 1 * * *"
     }
   ],
   "functions": {
@@ -30,5 +34,11 @@
       "memory": 1024,
       "maxDuration": 8
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
 }
