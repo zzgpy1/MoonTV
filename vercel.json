@@ -37,7 +37,7 @@
     }
   ],
   "functions": {
-    "api/cron.js": {
+    "api/cron": {
       "memory": 1024,
       "maxDuration": 8
     }
