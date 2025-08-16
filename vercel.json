@@ -1,9 +1,4 @@
 {
-  "build": {
-    "env": {
-      "NEXT_PUBLIC_ENV": "production"
-    }
-  },
   "headers": [
     {
       "source": "/fonts/(.*)\\.woff2",
@@ -11,15 +6,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/api/cron",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store, max-age=0"
         }
       ]
     }
